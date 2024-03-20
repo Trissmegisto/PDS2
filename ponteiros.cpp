@@ -21,7 +21,6 @@ int main()
     for (int i = 0; i < tamanhoDoVetor; i++)
     {
         cin >> vetor[i];
-        cout << vetor[i] << endl;
     }
 
     cout << &um << endl;; //4
@@ -48,15 +47,15 @@ int main()
     
     cout << um << endl; //15
 
-    vetor[tamanhoDoVetor] = *p; //16
+    p = vetor; //16
 
     cout << p << endl; //17
 
     cout << *p << endl; //18
 
-    *p = vetor[0]; //19
+    p = vetor; //19
 
-    if (*p == vetor[tamanhoDoVetor]) //20
+    if (p == vetor) //20
     {
         cout << "S" << endl;
     }else
@@ -67,6 +66,52 @@ int main()
     cout << p << endl; //21
     
     cout << *p << endl; //22
+
+    for(int i = 0; i < tamanhoDoVetor; i++) //23
+    {
+        *(p+i)*10;
+    }
+
+    for (int i = 0; i < tamanhoDoVetor; i++) //24
+    {
+        cout << vetor[i];
+    }
+
+    for (int i = 0; i < tamanhoDoVetor; i++) //25
+    {
+    cout << (vetor + i);
+    }
+
+    for (int i = 0; i < tamanhoDoVetor; i++) //26
+    {
+        cout << *(p + i);
+    }
+
+    p = &vetor[tamanhoDoVetor]; //27
+
+    cout << p << endl; //28
+
+    cout << *p << endl; //29
+
+    int **pToP; //30
+    pToP = &p;
+
+    cout << pToP << endl; //31
+
+    cout << &pToP << endl; //32
+
+    cout << *pToP << endl; //33
+    
+    cout << **pToP << endl; //34
+
+    int a, b, c; //35
+    cin >> a;
+    cin >> b;
+    cin >> c;
+
+    vpl(a, b, &c); //36
+
+    cout << a << b << c << endl; //37
 
     return 0;
 }
