@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int vpl(int x, int &y, int *z)
+void vpl(int x, int &y, int *z)
 {
     x++;
     y++;
