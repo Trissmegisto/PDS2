@@ -1,2 +1,2 @@
 # PDS2
-Testando o github
+Atividades de Programação e Desenvolvimento de Software II, todas em C++
