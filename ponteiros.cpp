@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int vpl(int x, int &y, int *z)
+void vpl(int x, int &y, int *z)
 {
     x++;
     y++;
-    *z++;
+    (*z)++;
 }
 
 int main()
@@ -69,25 +69,44 @@ int main()
 
     for(int i = 0; i < tamanhoDoVetor; i++) //23
     {
-        *(p+i)*10;
+        *(p+i) *= 10;
     }
 
     for (int i = 0; i < tamanhoDoVetor; i++) //24
     {
-        cout << vetor[i];
+        if(i == tamanhoDoVetor - 1){
+            cout << vetor[i];
+        }else{
+        cout << vetor[i] << " ";
+        }
     }
+
+    cout << endl;
 
     for (int i = 0; i < tamanhoDoVetor; i++) //25
     {
-    cout << (vetor + i);
+        if(i == tamanhoDoVetor-1){
+            cout << *(vetor + i);
+        }else{
+        cout << *(vetor + i) << " ";
+        }
     }
+
+    cout << endl;
 
     for (int i = 0; i < tamanhoDoVetor; i++) //26
     {
-        cout << *(p + i);
+        if(i == tamanhoDoVetor-1){
+            cout << *(p + i);
+        }else{
+        cout << *(p + i) << " ";
+        }
     }
+    
 
-    p = &vetor[tamanhoDoVetor]; //27
+    cout << endl;
+
+    p = &vetor[tamanhoDoVetor-1]; //27
 
     cout << p << endl; //28
 
@@ -111,7 +130,7 @@ int main()
 
     vpl(a, b, &c); //36
 
-    cout << a << b << c << endl; //37
+    cout << a << " " <<  b << " " << c << endl; //37
 
     return 0;
 }
